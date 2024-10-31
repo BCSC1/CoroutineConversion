@@ -42,7 +42,8 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
-        val scope = CoroutineScope(Job() + Dispatchers.Default)
+        val scope = CoroutineScope(Job() + Dispatchers.IO)
+
         findViewById<Button>(R.id.revealButton).setOnClickListener{
             scope.launch{
                 repeat(100){
